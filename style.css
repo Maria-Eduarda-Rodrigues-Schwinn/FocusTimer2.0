@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 194;
+  --bg-color: hsl(var(--hue), 40%, 98%);
+  --text-color: hsl(240, 6%, 21%);
+
+  --primary-color: hsl(var(--hue), 100%, 63%);
+  --button-secondary: hsl(var(--hue), 40%, 98%);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  --bg-controls-color: hsl(0, 0%, 100%);
+}
+
+html.dark {
+  --bg-color: hsl(240, 6%, 21%);
+  --text-color: hsl(0, 0%, 100%);
+  --bg-controls-color: rgb(109, 140, 150);
+  --text-secondary-color: hsl(240, 6%, 21%);
+}
+
+html.dark .ph-moon,
+html:not(.dark) .ph-sun {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 0;
+
+  color: var(--text-color);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+section.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: normal;
+  font-family: "Roboto Slab", serif;
+  align-items: center;
+  line-height: 1;
+}
+
+#timer p {
+  margin: 0;
+  padding: 0;
+}
+
+#controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-controls-color);
+
+  padding: 1rem;
+  border-radius: 999rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.sound-card {
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+section#sounds {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.top,
+.bottom {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.ph-bold.ph-tree:before,
+.ph-bold.ph-cloud-rain:before,
+.ph-bold.ph-coffee:before,
+.ph-bold.ph-fire:before {
+  font-size: 5rem;
+  color: var(--text-secondary-color);
+}
+
+.sound-card.selected {
+  background-color: #02799d;
+}
+
+.sound-card.selected > i::before {
+  color: white;
+}
+
+/* controls */
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  #app {
+    flex-direction: column;
+  }
+}

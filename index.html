@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pomodoro style timer" />
+    <title>FocusTimer2.0 - Pomodoro</title>
+
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="./src/main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <button id="toggle-mode">
+        <span class="sr-only">Ativar dark Mode!</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+      </button>
+      <section class="left">
+        <section id="timer" class="flex">
+          <p id="minutes">00</p>
+          <p>:</p>
+          <p id="seconds">00</p>
+        </section>
+        <section id="controls" class="flex">
+          <button data-action="toggleRunning">
+            <img src="./assets/play.svg" alt="Start counter button" />
+          </button>
+          <button data-action="toggleRunning">
+            <img src="./assets/stop.svg" alt="Counter stop button" />
+          </button>
+          <button data-action="increase" id="increase">
+            <img
+              src="./assets/more.svg"
+              alt="Button to increase the timer time by five minutes"
+            />
+          </button>
+          <button data-action="decrease" id="decrease">
+            <img
+              src="./assets/less.svg"
+              alt="Button to decrease the timer time by five minutes"
+            />
+          </button>
+        </section>
+      </section>
+      <section id="sounds">
+        <div class="top">
+          <div class="sound-card" id="forest">
+            <i class="ph-bold ph-tree"></i>
+            <span class="sr-only">Sound of the forest</span>
+          </div>
+          <div class="sound-card selected" id="rain">
+            <i class="ph-bold ph-cloud-rain"></i>
+            <span class="sr-only">Rain Sound</span>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="sound-card" id="coffee">
+            <i class="ph-bold ph-coffee"></i>
+            <span class="sr-only">Coffee shop sound</span>
+          </div>
+          <div class="sound-card" id="fireplace">
+            <i class="ph-bold ph-fire"></i>
+            <span class="sr-only">Fireplace sound</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
