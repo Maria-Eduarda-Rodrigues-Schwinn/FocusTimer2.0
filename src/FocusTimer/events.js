@@ -2,6 +2,7 @@ import { controls, soundCards } from "./elements.js"
 import * as actions from "./actions.js"
 import * as el from "./elements.js"
 import status from "./status.js"
+import { updateDisplay } from "./timer.js"
 
 export function registerControls() {
   controls.addEventListener("click", (event) => {

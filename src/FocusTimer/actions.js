@@ -1,14 +1,14 @@
 import status from "./status.js"
 import * as timer from "./timer.js"
 import { sounds, buttonPressAudio } from "./sounds.js"
-// import * as el from "./elements.js"
+import * as el from "./elements.js"
 import * as events from "./events.js"
 
 export function toggleRunning() {
   status.isRunning = document.documentElement.classList.toggle("running")
 
   timer.countDown()
-  sounds.buttonPressAudio.play()
+  buttonPressAudio.play()
 
   buttonPressAudio.play()
 }
@@ -28,6 +28,7 @@ export function set() {
 
 export function increase() {
   status.minutes += 5
+  status.minutes = status.minutes > 60 ? 60 : status.minutes
   timer.updateDisplay()
 }
 
