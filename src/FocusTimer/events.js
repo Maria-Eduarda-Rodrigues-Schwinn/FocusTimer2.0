@@ -2,7 +2,6 @@ import { controls, soundCards } from "./elements.js"
 import * as actions from "./actions.js"
 import * as el from "./elements.js"
 import status from "./status.js"
-import * as timer from "./timer.js"
 
 export function registerControls() {
   controls.addEventListener("click", (event) => {
@@ -23,6 +22,11 @@ export function registerControls() {
       const sound = card.id
       actions.selectSound(sound)
     })
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        card.click()
+      }
+    })
   })
 }
 
@@ -33,14 +37,14 @@ export function setMinutes() {
 
   el.minutes.onkeypress = (event) => /\d/.test(event.key)
 
-  el.minutes.addEventListener("blur", event => {
+  el.minutes.addEventListener("blur", (event) => {
     let time = event.currentTarget.textContent
     time = time > 60 ? 60 : time
 
-    status.minutes
+    status.minutes = time
     status.seconds = 0
 
-    timer.updateDisplay()
+    updateDisplay()
     el.minutes.removeAttribute("contenteditable")
   })
 }
