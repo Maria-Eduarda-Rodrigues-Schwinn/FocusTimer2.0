@@ -5,10 +5,10 @@ by Explorer Rocketseat <br/>
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-abordagem">Abordagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-approach">Approach</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 <p align="center">
@@ -18,34 +18,34 @@ by Explorer Rocketseat <br/>
 <br>
 
 <p align="center">
-  <img alt="projeto GitFav" src=".github/preview.png" width="100%">
+  <img alt="project GitFav" src=".github/preview.png" width="100%">
 </p>
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
-- HTML e CSS
+- HTML and CSS
 - JavaScript
-- Git e Github
+- Git and Github
 - Figma
 
-## 💻 Projeto
+## 💻 Project
 
-O FocusTimer 2.0 é uma aplicação web voltada a criação de um site baseado em um cronômetro com reprodução opcional de sons, com controlador do tempo e mudança de tema.
+FocusTimer 2.0 is a web application focused on creating a site based on an optional sound reproduction timer, with time controller and theme change.
 
-## 🌐 Abordagem
+## 🌐 Approach
 
-Esse projeto aborda:
+This project addresses:
 
-- Refatoração de código JS
-- Callbacks e funções recursivas
+- JS Code Reface
+- Callbacks and recursive functions
 - CleanCode
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença MIT.
+This project is under the MIT license.
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+Made with ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
