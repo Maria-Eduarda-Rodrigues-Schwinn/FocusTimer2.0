@@ -37,11 +37,9 @@ export function setMinutes() {
     el.minutes.textContent = ""
   })
 
-  el.minutes.onkeypress = (event) => /\d/.test(event.key)
-
-  el.minutes.addEventListener("blur", (event) => {
-    let time = event.currentTarget.textContent
-    time = time > 60 ? 60 : time
+  el.minutes.addEventListener("blur", () => {
+    let time = parseInt(el.minutes.textContent)
+    time = isNaN(time) ? 0 : Math.min(time, 60)
 
     status.minutes = time
     status.seconds = 0
