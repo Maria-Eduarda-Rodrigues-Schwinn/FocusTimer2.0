@@ -1,17 +1,14 @@
 import status from "./status.js"
 import * as timer from "./timer.js"
 import { sounds, buttonPressAudio } from "./sounds.js"
-import * as el from "./elements.js"
+// import * as el from "./elements.js"
+import * as events from "./events.js"
 
 export function toggleRunning() {
-  status.isRunning = !status.isRunning
-  document.documentElement.classList.toggle("running", status.isRunning)
+  status.isRunning = document.documentElement.classList.toggle("running")
 
-  if (status.isRunning) {
-    timer.countDown()
-  } else {
-    clearTimeout(status.countDownId)
-  }
+  timer.countDown()
+  sounds.buttonPressAudio.play()
 
   buttonPressAudio.play()
 }
@@ -40,25 +37,22 @@ export function decrease() {
 }
 
 export function selectSound(sound) {
-  if (status.currentSound) {
+  if (status.currentSound && status.currentSound === sounds[sound]) {
     status.currentSound.pause()
-  }
+    status.currentSound = null
+    document.getElementById(sound).classList.remove("selected")
+  } else {
+    if (status.currentSound) {
+      status.currentSound.pause()
+      document.querySelector(".selected").classList.remove("selected")
+    }
 
-  status.currentSound = sounds[sound]
-  if (status.currentSound) {
-    status.currentSound.play()
+    status.currentSound = sounds[sound]
+    if (status.currentSound) {
+      status.currentSound.play()
+      document.getElementById(sound).classList.add("selected")
+    }
   }
 
   buttonPressAudio.play()
-}
-
-export function toggleMusic() {
-  status.isMute = !status.isMute
-  document.documentElement.classList.toggle("music-on", status.isMute)
-
-  // if (status.isMute) {
-  //   sounds.bgAudio.play()
-  // } else {
-  //   sounds.bgAudio.pause()
-  // }
 }

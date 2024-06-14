@@ -22,6 +22,7 @@ export function registerControls() {
       const sound = card.id
       actions.selectSound(sound)
     })
+
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         card.click()
