@@ -37,14 +37,22 @@ export function setMinutes() {
     el.minutes.textContent = ""
   })
 
+  el.minutes.addEventListener("keypress", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault()
+      el.minutes.blur()
+    } else if (!/\d/.test(event.key)) {
+      event.preventDefault()
+    }
+  })
+
   el.minutes.addEventListener("blur", () => {
     let time = parseInt(el.minutes.textContent)
-    time = isNaN(time) ? 0 : Math.min(time, 60)
+    time = isNaN(time) ? 0 : Math.min(Math.max(time, 0), 60)
 
     status.minutes = time
     status.seconds = 0
 
     updateDisplay()
-    el.minutes.removeAttribute("contenteditable")
   })
 }
