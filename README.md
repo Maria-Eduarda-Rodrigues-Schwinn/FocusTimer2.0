@@ -48,4 +48,4 @@ This project is under the MIT license.
 
 ---
 
-Made with ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+Made with ♥ by Rocketseat :wave: [Join our community!](https://discord.gg/rocketseat)
