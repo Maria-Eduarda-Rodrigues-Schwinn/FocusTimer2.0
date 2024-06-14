@@ -152,6 +152,10 @@ html:not(.music-on) .ph-speaker-high {
   display: none;
 }
 
+#minutes[contenteditable="true"] {
+  border: 1px solid #000;
+}
+
 @media (max-width: 620px) {
   #app {
     flex-direction: column;
