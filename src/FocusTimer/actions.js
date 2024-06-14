@@ -1,6 +1,6 @@
 import status from "./status.js"
 import * as timer from "./timer.js"
-import * as sounds from "./sounds.js"
+import { sounds, buttonPressAudio } from "./sounds.js"
 import * as el from "./elements.js"
 
 export function toggleRunning() {
@@ -13,7 +13,7 @@ export function toggleRunning() {
     clearTimeout(status.countDownId)
   }
 
-  sounds.buttonPressAudio.play()
+  buttonPressAudio.play()
 }
 
 export function reset() {
@@ -21,7 +21,7 @@ export function reset() {
   document.documentElement.classList.remove("running")
 
   timer.updateDisplay()
-  sounds.buttonPressAudio.play()
+  buttonPressAudio.play()
 }
 
 export function set() {
@@ -49,7 +49,7 @@ export function selectSound(sound) {
     status.currentSound.play()
   }
 
-  sounds.buttonPressAudio.play()
+  buttonPressAudio.play()
 }
 
 export function toggleMusic() {
