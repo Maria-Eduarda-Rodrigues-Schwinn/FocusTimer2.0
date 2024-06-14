@@ -99,6 +99,10 @@ section.left {
   border-radius: 999rem;
 }
 
+#timer #minutes {
+  border: none;
+}
+
 button {
   background-color: transparent;
   border: none;
